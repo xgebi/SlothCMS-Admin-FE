@@ -5,8 +5,6 @@ yarn-debug.log*
 yarn-error.log*
 /test/unit/coverage/
 
-src/Dockerfile
-
 # Editor directories and files
 .idea
 .vscode
@@ -15,3 +13,4 @@ src/Dockerfile
 *.njsproj
 *.sln
 .DS_Store
+src/conf.js

@@ -36,6 +36,7 @@
 import InitWizardStepOne from './InitWizardStepOne.vue';
 import InitWizardStepTwo from './InitWizardStepTwo.vue';
 import InitWizardStepThree from './InitWizardStepThree.vue';
+//import Conf from '../../conf.js';
 
 export default {
   name: 'InitWizard',
@@ -43,8 +44,10 @@ export default {
   data() {
     return {
       currentStep: 1,
-      confFileProperties: this.confFileProperties,
-      confFileState: {},
+      confFileState: {
+        user: {},
+        website: {}
+      },
       savingConfigFileError: false
     }
   },
@@ -56,7 +59,7 @@ export default {
   methods: {
     saveConfigFile() {
       var status;
-      fetch(window.location.protocol + "//" + window.location.hostname + "/sloth-admin-api/config-file/", {
+      fetch("../sloth-admin-api/config-file/", {
         body: JSON.stringify(this.confFileState),
         cache: 'no-cache',
         headers: {

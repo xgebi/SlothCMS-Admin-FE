@@ -43,7 +43,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/sloth-admin/',
+    assetsPublicPath: '/ext/slothcms/sloth-admin/',
 
     /**
      * Source Maps

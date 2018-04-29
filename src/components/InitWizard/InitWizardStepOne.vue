@@ -1,9 +1,9 @@
 <template>
   <div class="step step-1">
     <label for="page-name">Web site name:</label>
-    <input id="page-name" v-model="value.sitename" />
+    <input id="page-name" v-model="value.website.sitename" />
     <label for="page-subtitle">Web site sub title:</label>
-    <input id="page-subtitle" v-model="value.subtitle" />
+    <input id="page-subtitle" v-model="value.website.subtitle" />
   </div>
 </template>
 

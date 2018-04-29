@@ -5,6 +5,8 @@
 </template>
 
 <script>
+//import Conf from '../conf.js';
+
 export default {
   name: 'FirstRunChecker',
   mounted() {
@@ -18,7 +20,7 @@ export default {
   methods: {
     findConfFile() {      
       var status;
-      fetch(window.location.protocol + "//" + window.location.hostname + "/sloth-admin-api/config/")
+      fetch("../sloth-admin-api/config/")
         .then((response) => {
           status = response.status;
           return response.json();
