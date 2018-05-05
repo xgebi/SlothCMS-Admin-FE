@@ -50,7 +50,7 @@ export default {
           token = token.split(" ");
           this.setToken(token[1]);
           this.loginError = false;
-          //this.$router.push({ name: 'Dashboard'});
+          this.$router.push({ name: 'Dashboard'});
         } else {
           this.loginError = true;
         }

@@ -36,7 +36,6 @@
 import InitWizardStepOne from './InitWizardStepOne.vue';
 import InitWizardStepTwo from './InitWizardStepTwo.vue';
 import InitWizardStepThree from './InitWizardStepThree.vue';
-//import Conf from '../../conf.js';
 
 export default {
   name: 'InitWizard',

@@ -5,9 +5,8 @@
 </template>
 
 <script>
-
 export default {
-  name: 'MainSidebar',
+  name: 'main-sidebar',
 }
 </script>
 
