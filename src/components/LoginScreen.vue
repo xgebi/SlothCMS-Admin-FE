@@ -1,19 +1,66 @@
 <template>
   <div class="login-screen">
     <div class="login-dialog">
+      <div v-if="loginError">
+        Please check your username and password.
+      </div>
       <label for="username">Username:</label>
-      <input id="username" type="text" />
+      <input id="username" type="text" v-model="credentials.username"/>
       <label for="password">Password:</label>
-      <input id="password" type="text" />
+      <input id="password" type="password" v-model="credentials.password"/>
       <a>Reset password</a>
-      <button>Log in</button>
+      <button v-on:click="authenticate()">Log in</button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
+
 export default {
   name: 'LoginScreen',
+  data() {
+    return {
+      credentials: {
+        username: "",
+        password: ""
+      },
+      loginError: false
+    }
+  },
+  computed: mapGetters([
+    'getToken'
+  ]),
+  methods: {
+    authenticate() {
+      var status;
+      fetch("../sloth-admin-api/login/", {
+        body: JSON.stringify(this.credentials),
+        cache: 'no-cache',
+        headers: {
+          'content-type' : 'application/json'
+        },
+        method: 'POST',
+        redirect: 'follow',
+        referrer: 'no-referrer'
+      })
+      .then((response) => {
+        let token = response.headers.get('Authorization');
+        if (response.status === 200 && token.length > 0) {
+          token = token.split(" ");
+          this.setToken(token[1]);
+          this.loginError = false;
+          //this.$router.push({ name: 'Dashboard'});
+        } else {
+          this.loginError = true;
+        }
+      });
+      
+    },
+    ...mapMutations({
+      setToken: 'setToken'
+    })
+  }
 }
 </script>
 
