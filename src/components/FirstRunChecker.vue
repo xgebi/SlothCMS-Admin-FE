@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     findConfFile() {      
-      var status;
+      let status;
       fetch("../sloth-admin-api/config/")
         .then((response) => {
           status = response.status;

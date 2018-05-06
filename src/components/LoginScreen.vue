@@ -33,7 +33,7 @@ export default {
   ]),
   methods: {
     authenticate() {
-      var status;
+      let status;
       fetch("../sloth-admin-api/login/", {
         body: JSON.stringify(this.credentials),
         cache: 'no-cache',
@@ -50,15 +50,27 @@ export default {
           token = token.split(" ");
           this.setToken(token[1]);
           this.loginError = false;
-          this.$router.push({ name: 'Dashboard'});
+          return response.json();          
         } else {
           this.loginError = true;
+        }
+      })
+      .then((body) => {        
+        if (!this.loginError) {
+          console.log(body);
+          this.setName(body.name);
+          this.setUserName(body.user_name);
+          this.setPostTypes(body.post_types);
+          this.$router.push({ name: 'Dashboard'});
         }
       });
       
     },
     ...mapMutations({
-      setToken: 'setToken'
+      setToken: 'setToken',
+      setName: 'setName',
+      setUserName: 'setUserName',
+      setPostTypes: 'setPostTypes'
     })
   }
 }

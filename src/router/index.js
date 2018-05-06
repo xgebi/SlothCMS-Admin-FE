@@ -5,6 +5,7 @@ import FirstRunChecker from '@/components/FirstRunChecker'
 import InitWizard from '@/components/InitWizard/InitWizard'
 import LoginScreen from '@/components/LoginScreen'
 import Dashboard from '@/components/Dashboard/Dashboard'
+import Settings from '@/components/Dashboard/Settings'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/dashboard/',
       name: 'Dashboard',
       component: Dashboard
+    },
+    {
+      path: '/dashboard/settings/',
+      name: 'Settings',
+      component: Settings
     }
   ]
 })

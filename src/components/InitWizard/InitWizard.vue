@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     saveConfigFile() {
-      var status;
+      let status;
       fetch("../sloth-admin-api/config-file/", {
         body: JSON.stringify(this.confFileState),
         cache: 'no-cache',
