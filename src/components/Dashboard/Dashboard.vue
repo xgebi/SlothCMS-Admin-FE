@@ -1,5 +1,6 @@
 <template>
   <div>
+    <authorization-checker></authorization-checker>
     <main-sidebar></main-sidebar>
     <div>
       Dashboard
@@ -9,11 +10,13 @@
 
 <script>
 import MainSidebar from './MainSidebar.vue'
+import AuthorizationChecker from './AuthorizationChecker.vue'
 
 export default {
   name: 'Dashboard',
   components: {
-    MainSidebar
+    MainSidebar,
+    AuthorizationChecker
   }
 }
 </script>

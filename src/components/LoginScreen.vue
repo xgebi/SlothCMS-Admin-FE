@@ -29,7 +29,7 @@ export default {
     }
   },
   computed: mapGetters([
-    'getToken'
+    'token'
   ]),
   methods: {
     authenticate() {
@@ -59,7 +59,7 @@ export default {
         if (!this.loginError) {
           console.log(body);
           this.setName(body.name);
-          this.setUserName(body.user_name);
+          this.setUsername(body.user_name);
           this.setPostTypes(body.post_types);
           this.$router.push({ name: 'Dashboard'});
         }
@@ -69,7 +69,7 @@ export default {
     ...mapMutations({
       setToken: 'setToken',
       setName: 'setName',
-      setUserName: 'setUserName',
+      setUsername: 'setUsername',
       setPostTypes: 'setPostTypes'
     })
   }

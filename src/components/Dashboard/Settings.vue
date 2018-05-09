@@ -1,17 +1,20 @@
 <template>
   <div>
-  <main-sidebar></main-sidebar>
-    Settings
+    <authorization-checker></authorization-checker>
+    <main-sidebar></main-sidebar>
+      Settings
   </div>
 </template>
 
 <script>
 import MainSidebar from './MainSidebar.vue'
+import AuthorizationChecker from './AuthorizationChecker.vue'
 
 export default {
   name: 'Settings',
   components: {
-    MainSidebar
+    MainSidebar,
+    AuthorizationChecker
   }
 }
 </script>

@@ -6,6 +6,8 @@ import InitWizard from '@/components/InitWizard/InitWizard'
 import LoginScreen from '@/components/LoginScreen'
 import Dashboard from '@/components/Dashboard/Dashboard'
 import Settings from '@/components/Dashboard/Settings'
+import PostEditor from '@/components/Dashboard/PostManagement/PostEditor'
+import PostList from '@/components/Dashboard/PostManagement/PostList'
 
 Vue.use(Router)
 
@@ -36,6 +38,21 @@ export default new Router({
       path: '/dashboard/settings/',
       name: 'Settings',
       component: Settings
+    },
+    { 
+      path: '/dashboard/post/list/:type', 
+      name: 'PostList',
+      component: PostList
+    },
+    { 
+      path: '/dashboard/post/edit/:type', 
+      name: 'PostEditor',
+      component: PostEditor
+    },
+    { 
+      path: '/dashboard/post/new/:type', 
+      name: 'PostEditor',
+      component: PostEditor
     }
   ]
 })

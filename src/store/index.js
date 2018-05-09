@@ -7,21 +7,25 @@ export default new Vuex.Store({
   state: {
     token: "",
     name: "",
-    userName: "",
-    postTypes: {}
+    username: "",
+    postTypes: {},
+    keepAliveIntervalID: ""
   },
   getters: {
-    getToken: state => {
+    token: state => {
       return state.token;
     },
-    getName: state => {
+    name: state => {
       return state.name;
     },
-    getUserName: state => {
-      return state.userName;
+    username: state => {
+      return state.username;
     },
-    getPostTypes: state => {
+    postTypes: state => {
       return state.postTypes;
+    },
+    keepAliveIntervalID: state => {
+      return state.keepAliveIntervalID;
     }
   },
   mutations: {
@@ -31,11 +35,14 @@ export default new Vuex.Store({
     setName (state, name) {
       state.name = name
     },
-    setUserName (state, userName) {
-      state.userName = userName
+    setUsername (state, username) {
+      state.username = username
     },    
     setPostTypes (state, postTypes) {
       state.postTypes = postTypes
+    },
+    setKeepAliveIntervalID (state, keepAliveIntervalID) {
+      state.keepAliveIntervalID = keepAliveIntervalID
     }
   }
 })
