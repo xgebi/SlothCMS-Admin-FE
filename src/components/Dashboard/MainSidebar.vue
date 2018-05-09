@@ -4,9 +4,9 @@
     <li><router-link to="/dashboard/">Dashboard</router-link></li>
     <!-- Here will be post types -->
     <li v-for="postType in postTypes">
-      <router-link to={ "/dashboard/post/list/" + postType.name}>{{ postType.displayName + "s" }}</router-link>
+      <router-link :to="{ name: 'PostList', params: { type: postType.name }}">{{ postType.displayName + "s" }}</router-link>
       <ul>
-        <li><router-link to="/dashboard/post/new/postType.name">{{ "New " + postType.displayName + "s" }}</router-link></li>
+        <li><router-link :to="{ name: 'PostEditor', params: { type: postType.name }}">{{ "New " + postType.displayName + "s" }}</router-link></li>
       </ul>
     </li>
     <li><router-link to="/dashboard/settings/">Settings</router-link>
@@ -30,9 +30,6 @@ export default {
     'postTypes',
     'token'
   ]),
-  mounted: function () {
-    console.log(this.postTypes);
-  },
   methods: {
     logOut() {
       let status;
