@@ -6,7 +6,7 @@
     <li v-for="postType in postTypes">
       <router-link :to="{ name: 'PostList', params: { type: postType.name }}">{{ postType.displayName + "s" }}</router-link>
       <ul>
-        <li><router-link :to="{ name: 'PostEditor', params: { type: postType.name }}">{{ "New " + postType.displayName + "s" }}</router-link></li>
+        <li><router-link :to="{ name: 'AddPost', params: { type: postType.name }}">{{ "New " + postType.displayName + "s" }}</router-link></li>
       </ul>
     </li>
     <li><router-link to="/dashboard/settings/">Settings</router-link>
