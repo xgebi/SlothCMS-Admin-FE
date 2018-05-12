@@ -44,8 +44,7 @@ export default {
       })
       .then((response) => {
         this.$router.push({ name: 'LoginScreen'});
-      });
-      
+      });      
     }
   }
 }

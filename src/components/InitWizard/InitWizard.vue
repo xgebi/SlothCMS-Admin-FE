@@ -7,7 +7,11 @@
       <div v-if="savingConfigFileError">
         Error occured while writing config file.
       </div>
-      <init-wizard-step-one v-if="currentStep === 1" v-model="confFileState"></init-wizard-step-one>
+      <init-wizard-step-one 
+          v-if="currentStep === 1" 
+          v-model="confFileState" 
+          v-bind:timezones="confFileProperties.timeZones"
+      ></init-wizard-step-one>
       <init-wizard-step-two v-if="currentStep === 2" v-model="confFileState"></init-wizard-step-two>
       <init-wizard-step-three v-if="currentStep === 3" v-model="confFileState"></init-wizard-step-three>
       <button 
@@ -45,7 +49,10 @@ export default {
       currentStep: 1,
       confFileState: {
         user: {},
-        website: {}
+        website: {
+          timezone: this.confFileProperties.defaultTimeZone
+        },
+
       },
       savingConfigFileError: false
     }
@@ -73,7 +80,6 @@ export default {
         return response.json();
       })
       .then((data) => {
-        console.log(status);
         if (status === 201) {
           this.currentStep++;
         } else {
