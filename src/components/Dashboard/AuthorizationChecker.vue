@@ -18,16 +18,11 @@ export default {
       this.$router.push({ name: 'LoginScreen'});
     } else {
       if (this.keepAliveIntervalID.length === 0) {
-        let user = {
-          username: this.username,
-          token: this.token
-        };
         let interval = window.setInterval(() => {
           fetch("../sloth-admin-api/loggedIn/", {
-            body: JSON.stringify(user),
             cache: 'no-cache',
             headers: {
-              'content-type' : 'application/json'
+              'Authorization' : this.username + ' ' + this.token,
             },
             method: 'PUT',
             redirect: 'follow',

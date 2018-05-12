@@ -45,12 +45,12 @@ export default new Router({
       component: PostList
     },
     { 
-      path: '/dashboard/post/edit/:type', 
+      path: '/dashboard/post/:type/edit/:slug', 
       name: 'EditPost',
       component: PostEditor
     },
     { 
-      path: '/dashboard/post/new/:type', 
+      path: '/dashboard/post/:type/new', 
       name: 'AddPost',
       component: PostEditor
     }

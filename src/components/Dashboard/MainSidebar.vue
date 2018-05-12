@@ -32,17 +32,11 @@ export default {
   ]),
   methods: {
     logOut() {
-      let status;
-      let user = {
-        username: this.username,
-        token: this.token
-      }
-      console.log(user, this.$store);
+      let status;      
       fetch("../sloth-admin-api/logout/", {
-        body: JSON.stringify(user),
         cache: 'no-cache',
         headers: {
-          'content-type' : 'application/json'
+          'Authorization' : this.username + ' ' + this.token,
         },
         method: 'PUT',
         redirect: 'follow',

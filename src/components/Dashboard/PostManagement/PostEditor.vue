@@ -11,8 +11,14 @@
       <label for="postContent">{{ this.postType.displayName }} Content:</label>
       <textarea id="postContent" name="postContent" v-model="content.content"></textarea>
     </div>
-    <div v-for="field in postType.optionalFields">
-      
+    <div>
+      <h2>Custom fields</h2>
+      <div v-for="field in postType.optionalFields">
+        <label>{{ field.displayName }}</label>
+        <input v-if="field.type === 'text'" type="text" id="{{field.name}}" v-model="content[field.name]" />
+        <input v-if="field.type === 'file'" type="file" id="{{field.name}}" v-model="content[field.name]" />
+        <textarea v-if="field.type === 'textarea'" id="{{field.name}}" v-model="content[field.name]"></textarea>
+      </div>
     </div>
   </div>
 </template>
@@ -46,6 +52,7 @@ export default {
   },
   watch: {
     '$route' (to, from) {
+      console.log(to);
       this.updatePostType();
     }
   },
