@@ -4,10 +4,6 @@
     <input id="page-name" v-model="value.website.sitename" />
     <label for="page-subtitle">Web site sub title:</label>
     <input id="page-subtitle" v-model="value.website.subtitle" />
-    <label for="page-timezone">Time zone:</label>
-    <select id="page-timezone" v-model="value.website.timezone">
-      <option v-for="timezone in timezones" v-bind:value="timezone">{{ timezone }}</option>
-    </select>
   </div>
 </template>
 

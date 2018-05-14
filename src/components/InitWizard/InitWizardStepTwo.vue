@@ -4,7 +4,7 @@
     <input id="page-name" v-model="value.user.adminUsername" />
     <label for="page-subtitle">Admin password:</label>
     <input id="page-subtitle" v-model="value.user.adminPassword" type="password"/>
-    <label for="page-name">Full name:</label>
+    <label for="page-name">Display name:</label>
     <input id="page-name" v-model="value.user.adminName" />
     <label for="page-name">Admin email:</label>
     <input id="page-name" v-model="value.user.adminEmail" />

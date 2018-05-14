@@ -82,6 +82,7 @@ export default {
       .then((data) => {
         if (status === 201) {
           this.currentStep++;
+          this.savingConfigFileError = false;
         } else {
           this.savingConfigFileError = true;
           this.currentStep = 1;

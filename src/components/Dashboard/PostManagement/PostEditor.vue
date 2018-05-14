@@ -15,9 +15,9 @@
       <h2>Custom fields</h2>
       <div v-for="field in postType.optionalFields">
         <label>{{ field.displayName }}</label>
-        <input v-if="field.type === 'text'" type="text" id="{{field.name}}" v-model="content[field.name]" />
-        <input v-if="field.type === 'file'" type="file" id="{{field.name}}" v-model="content[field.name]" />
-        <textarea v-if="field.type === 'textarea'" id="{{field.name}}" v-model="content[field.name]"></textarea>
+        <input v-if="field.type === 'text'" type="text" id="{{field.name}}" v-model="content.custom[field.name]" />
+        <input v-if="field.type === 'file'" type="file" id="{{field.name}}" v-model="content.custom[field.name]" />
+        <textarea v-if="field.type === 'textarea'" id="{{field.name}}" v-model="content.custom[field.name]"></textarea>
       </div>
     </div>
     <div>
@@ -44,7 +44,8 @@ export default {
       postType: {},
       content: {
         title: "",
-        content: ""
+        content: "",
+        custom: {}
       }
     }
   },
@@ -73,9 +74,9 @@ export default {
         saveButton = "Schedule";
       } else {
         if (this.$route.fullPath.endsWith("/new")) {
-          saveButton = "Publish";
+          this.saveButton = "Publish";
         } else {
-          saveButton = "Update";
+          this.saveButton = "Update";
         }          
       }    
       if (!this.$route.fullPath.endsWith("/new")) {
@@ -94,7 +95,7 @@ export default {
         })
         .then((data) => {
           if (status === 200) {
-            // Process data from back-end
+            this.content = data;
           }
         });  
       }       
@@ -119,8 +120,9 @@ export default {
         })
         .then((data) => {
           if (status === 201) {
+            console.log(data);
             this.$router.push({ 
-              name: 'InitWizard', 
+              name: 'EditPost', 
               params: { 
                 type: this.$route.params.type,
                 slug: data.slug
