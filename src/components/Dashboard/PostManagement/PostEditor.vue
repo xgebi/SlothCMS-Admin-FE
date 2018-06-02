@@ -15,9 +15,9 @@
       <h2>Custom fields</h2>
       <div v-for="field in postType.optionalFields">
         <label>{{ field.displayName }}</label>
-        <input v-if="field.type === 'text'" type="text" id="{{field.name}}" v-model="content.custom[field.name]" />
-        <input v-if="field.type === 'file'" type="file" id="{{field.name}}" v-model="content.custom[field.name]" />
-        <textarea v-if="field.type === 'textarea'" id="{{field.name}}" v-model="content.custom[field.name]"></textarea>
+        <input v-if="field.type === 'text'" type="text" :id="field.name" v-model="content.custom[field.name]" />
+        <!--<input v-if="field.type === 'file'" type="file" :id="field.name" v-on:change="content.custom[field.name]" />-->
+        <textarea v-if="field.type === 'textarea'" :id="field.name" v-model="content.custom[field.name]"></textarea>
       </div>
     </div>
     <div>
