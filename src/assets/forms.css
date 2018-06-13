@@ -1,0 +1,62 @@
+input[type="text"] {
+  font-size: 1rem;
+  padding: .25rem .5rem;
+  color: var(--black);
+  border: 1px solid var(--grey)
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  border: 0;
+  color: var(--white);
+  background: var(--purple);
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button:active {
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  border: 0;
+  color: var(--purple);
+  background: var(--white-orange);
+  box-shadow: inset 1px 1px 3px lightgray;
+}
+
+input[type="button"].orange,
+input[type="submit"].orange,
+input[type="reset"].orange,
+button.orange {
+  color: var(--black);
+  background: var(--orange);
+}
+
+input[type="button"]:active.orange,
+input[type="submit"]:active.orange,
+input[type="reset"]:active.orange,
+button:active.orange {
+  color: var(--orange);
+  background: var(--black);
+}
+
+input[type="button"].yellow,
+input[type="submit"].yellow,
+input[type="reset"].yellow,
+button.yellow {
+  color: var(--black);
+  background: var(--yellow);
+}
+
+input[type="button"]:active.yellow,
+input[type="submit"]:active.yellow,
+input[type="reset"]:active.yellow,
+button:active.yellow {
+  color: var(--yellow);
+  background: var(--black);
+}
+
