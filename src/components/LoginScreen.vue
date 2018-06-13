@@ -4,12 +4,24 @@
       <div v-if="loginError">
         Please check your username and password.
       </div>
-      <label for="username">Username:</label>
-      <input id="username" type="text" v-model="credentials.username"/>
-      <label for="password">Password:</label>
-      <input id="password" type="password" v-model="credentials.password"/>
-      <a>Reset password</a>
-      <button v-on:click="authenticate()">Log in</button>
+      <div>
+        <label for="username">Username:</label>
+      </div>
+      <div>
+        <input id="username" type="text" v-model="credentials.username"/>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+      </div>
+      <div>
+        <input id="password" type="password" v-model="credentials.password"/>
+      </div>
+      <div>
+        <a>Reset password</a>
+      </div>
+      <div>
+        <button v-on:click="authenticate()">Log in</button>
+      </div>
     </div>
   </div>
 </template>
@@ -78,7 +90,7 @@ export default {
 
 <style>
 .login-screen {
-  background: purple;
+  background: var(--purple);
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
@@ -90,8 +102,9 @@ export default {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 1rem;
-  background: white;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 50px;
+  padding: 2rem;
+  background: var(--white);
 }
 </style>

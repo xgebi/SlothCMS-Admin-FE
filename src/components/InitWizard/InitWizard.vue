@@ -99,19 +99,20 @@ export default {
     display: grid;
     grid-template-rows: 1fr auto 1fr;
     grid-template-columns: 1fr auto 1fr;
-    background: purple;
+    background: var(--purple);
     height: 100%;
     width: 100%;
   }
 
  .wizard .steps {
-   background: white;
-   grid-column: 2 / 3;
-   grid-row: 2 / 3;
-   display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 1rem;
-    grid-row-gap: 0.5rem;
+  background: var(--white);
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+  grid-row-gap: .5rem;
+  row-gap: .5rem;
  }
 
   .wizard .steps .step {
