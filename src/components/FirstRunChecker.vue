@@ -1,6 +1,8 @@
 <template>
-  <div>
-    First run checker
+  <div class="wizard">
+    <div>
+      First run checker
+    </div>
   </div>
 </template>
 
@@ -36,7 +38,3 @@ export default {
   },
 }
 </script>
-
-<style>
-
-</style>

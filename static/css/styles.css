@@ -1,7 +1,18 @@
-@import url("minireset.min.css");
-@import url("colors.css");
-@import url("typography.css");
-@import url("forms.css");
+@import "minireset.min.css";
+@import "colors.css";
+@import "typography.css";
+@import "forms.css";
+
+@import "wizard.css";
+
+body {
+  margin: 0;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+}
 
 /* Helper functions */
 .visuallyhidden {
