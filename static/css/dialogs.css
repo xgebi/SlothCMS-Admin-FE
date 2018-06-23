@@ -1,0 +1,7 @@
+.dialog {
+  padding: .5rem 1rem;
+}
+
+.dialog-error {
+  background: rgb(255, 101, 101);
+}

@@ -13,12 +13,14 @@
   grid-row: 2 / 3;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 1rem;
+  grid-template-rows: 2rem;
+  line-height: 2rem;
+  padding: 2rem;
   grid-row-gap: .5rem;
   row-gap: .5rem;
  }
 
- .wizard > #first-run {
+.wizard > #first-run {
    grid-template-columns: 1fr;
  }
 
@@ -31,4 +33,9 @@
 .wizard-login-button {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+}
+
+.wizard .dialog {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3; 
 }

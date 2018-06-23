@@ -1,6 +1,6 @@
 <template>
-  <div class="login-screen">
-    <div class="login-dialog">
+  <div class="wizard">
+    <div>
       <div v-if="loginError">
         Please check your username and password.
       </div>
@@ -87,24 +87,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.login-screen {
-  background: var(--purple);
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 100vh;
-  width: 100vw;
-}
-
-.login-screen .login-dialog {
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
-  display: grid;
-  grid-template-columns: 200px 200px;
-  grid-template-rows: 50px;
-  padding: 2rem;
-  background: var(--white);
-}
-</style>
