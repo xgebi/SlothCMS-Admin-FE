@@ -12,15 +12,23 @@
 <body>
   <div id="app">
     <div class="wizard">
-      <div class="step step-2">
-        <label for="page-name">Admin username:</label>
-        <input id="page-name" v-model="value.user.adminUsername" />
-        <label for="page-subtitle">Admin password:</label>
-        <input id="page-subtitle" v-model="value.user.adminPassword" type="password" />
-        <label for="page-name">Display name:</label>
-        <input id="page-name" v-model="value.user.adminName" />
-        <label for="page-name">Admin email:</label>
-        <input id="page-name" v-model="value.user.adminEmail" />
+      <div class="dialog">
+        <div class="step step-2">
+          <label for="page-name">Admin username:</label>
+          <input id="page-name" v-model="value.user.adminUsername" />
+          <label for="page-subtitle">Admin password:</label>
+          <input id="page-subtitle" v-model="value.user.adminPassword" type="password" />
+          <label for="page-name">Display name:</label>
+          <input id="page-name" v-model="value.user.adminName" />
+          <label for="page-name">Admin email:</label>
+          <input id="page-name" v-model="value.user.adminEmail" />
+        </div>
+        <div class="button-holder__left">
+          <button>Previous</button>
+        </div>
+        <div class="button-holder__right">
+          <button>Next</button>
+        </div>
       </div>
     </div>
   </div>

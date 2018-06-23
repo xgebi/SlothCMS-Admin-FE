@@ -30,6 +30,14 @@ button:active {
   box-shadow: inset 1px 1px 3px lightgray;
 }
 
+input[type="button"][disabled],
+input[type="submit"][disabled],
+input[type="reset"][disabled],
+button[disabled] {
+  color: var(--purple-disabled);
+  background: var(--white-orange);
+}
+
 input[type="button"].orange,
 input[type="submit"].orange,
 input[type="reset"].orange,

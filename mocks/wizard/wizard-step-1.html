@@ -12,12 +12,18 @@
 <body>
   <div id="app">
     <div class="wizard">
-      <div class="steps">
+      <div class="dialog">
         <div class="step step-1">
           <label for="page-name">Web site name:</label>
           <input id="page-name" v-model="value.website.sitename" />
           <label for="page-subtitle">Web site sub title:</label>
           <input id="page-subtitle" v-model="value.website.subtitle" />
+        </div>
+        <div class="button-holder__left">
+          <button disabled>Previous</button>
+        </div>
+        <div class="button-holder__right">
+          <button>Next</button>
         </div>
       </div>
     </div>
