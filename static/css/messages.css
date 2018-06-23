@@ -1,7 +1,7 @@
-.dialog {
+.message {
   padding: .5rem 1rem;
 }
 
-.dialog-error {
+.message-error {
   background: rgb(255, 101, 101);
 }

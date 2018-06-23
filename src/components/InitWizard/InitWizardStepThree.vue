@@ -9,6 +9,3 @@ export default {
   name: 'init-wizard-step-three',
 }
 </script>
-
-<style>
-</style>

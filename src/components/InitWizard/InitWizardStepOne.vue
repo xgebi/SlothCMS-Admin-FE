@@ -13,7 +13,3 @@ export default {
   props: [ 'value', 'timezones' ]
 }
 </script>
-
-<style>
-
-</style>

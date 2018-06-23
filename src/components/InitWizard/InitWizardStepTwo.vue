@@ -17,7 +17,3 @@ export default {
   props: [ 'value' ]
 }
 </script>
-
-<style>
-
-</style>

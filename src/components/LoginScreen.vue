@@ -1,6 +1,6 @@
 <template>
   <div class="wizard">
-    <div>
+    <div class="dialog">
       <div v-if="loginError">
         Please check your username and password.
       </div>

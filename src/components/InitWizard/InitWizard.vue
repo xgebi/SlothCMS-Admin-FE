@@ -1,6 +1,6 @@
 <template>
   <div class="wizard">
-    <div class="steps">
+    <div class="dialog">
       <div v-if="confFileProperties.notWritable">
         You need to change permissions on your filesystem.
       </div>
@@ -93,36 +93,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  .wizard {
-    display: grid;
-    grid-template-rows: 1fr auto 1fr;
-    grid-template-columns: 1fr auto 1fr;
-    background: var(--purple);
-    height: 100%;
-    width: 100%;
-  }
-
- .wizard .steps {
-  background: var(--white);
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 1rem;
-  grid-row-gap: .5rem;
-  row-gap: .5rem;
- }
-
-  .wizard .steps .step {
-    display: grid;
-    grid-template-columns: 1fr 1fr;    
-    grid-column: 1 / 3;
-  }
-
-  .wizard-login-button {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-  }
-</style>
