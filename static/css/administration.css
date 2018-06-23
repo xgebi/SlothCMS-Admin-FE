@@ -4,32 +4,43 @@ body {
 }
 
 /* Navigation */
-header {
+header#sidebar {
   background: var(--purple);
   color: var(--white);
   height: 100vh;
   padding: .5rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
-header h1 {
+header#sidebar h1 {
   margin: 0;
 }
-header nav ul {
+
+header#sidebar nav {
+  margin-top: 2rem;
+}
+
+header#sidebar nav ul {
   list-style: none;
   padding: 0;
 }
 
-header nav li > ul {
+header#sidebar nav li > ul {
   display: none;
 }
 
-header nav li > ul.open {
+header#sidebar nav li > ul.open {
   display: block;
 }
 
-header .logout-button {
+header#sidebar .logout-button {
   background: var(--purple-light);
   color: var(--purple);
+}
+
+header#sidebar a {
+  color: var(--white-orange);
 }
 
 /* Content */
