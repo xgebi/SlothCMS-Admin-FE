@@ -5,6 +5,7 @@
 @import "messages.css";
 
 @import "wizard.css";
+@import "administration.css";
 
 body {
   margin: 0;
