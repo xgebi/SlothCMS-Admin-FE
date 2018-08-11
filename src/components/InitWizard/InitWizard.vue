@@ -40,7 +40,6 @@
 import InitWizardStepOne from './InitWizardStepOne.vue';
 import InitWizardStepTwo from './InitWizardStepTwo.vue';
 import InitWizardStepThree from './InitWizardStepThree.vue';
-import InitWizardStepFour from './InitWizardStepFour.vue';
 
 export default {
   name: 'InitWizard',
