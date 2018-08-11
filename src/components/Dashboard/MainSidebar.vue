@@ -1,22 +1,29 @@
 <template>
-  <ul>
-    <li>{{ name }} <a v-on:click="logOut()">Log out</a></li>
-    <li><router-link to="/dashboard/">Dashboard</router-link></li>
-    <!-- Here will be post types -->
-    <li v-for="postType in postTypes">
-      <router-link :to="{ name: 'PostList', params: { type: postType.name }}">{{ postType.displayName + "s" }}</router-link>
-      <ul>
-        <li><router-link :to="{ name: 'AddPost', params: { type: postType.name }}">{{ "New " + postType.displayName + "s" }}</router-link></li>
-      </ul>
-    </li>
-    <li><router-link to="/dashboard/settings/">Settings</router-link>
-      <ul>
-        <!-- Here will be Themes settings -->
-        <!-- Here will be Content settings -->
-        <!-- Here will be Users settings -->
-      </ul>
-    </li>
-  </ul>
+  <header id="sidebar">
+    <div class="user-loggedin">
+      <span>{{ name }}</span>
+      <button v-on:click="logOut()" class="logout-button">Log out</button>
+    </div>
+    <nav>
+    <ul>
+      <li><router-link to="/dashboard/">Dashboard</router-link></li>
+      <!-- Here will be post types -->
+      <li v-for="postType in postTypes">
+        <router-link :to="{ name: 'PostList', params: { type: postType.name }}">{{ postType.displayName + "s" }}</router-link>
+        <ul>
+          <li><router-link :to="{ name: 'AddPost', params: { type: postType.name }}">{{ "New " + postType.displayName + "s" }}</router-link></li>
+        </ul>
+      </li>
+      <li><router-link to="/dashboard/settings/">Settings</router-link>
+        <ul>
+          <!-- Here will be Themes settings -->
+          <!-- Here will be Content settings -->
+          <!-- Here will be Users settings -->
+        </ul>
+      </li>
+    </ul>
+    </nav>
+  </header>
 </template>
 
 <script>

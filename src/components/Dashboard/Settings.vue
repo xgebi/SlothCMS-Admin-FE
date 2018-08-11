@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="settings" class="settings administration">
     <authorization-checker></authorization-checker>
     <main-sidebar></main-sidebar>
       Settings

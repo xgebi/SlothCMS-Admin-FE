@@ -1,6 +1,8 @@
-body {
+/* body */
+#app .administration {
   display: grid;
   grid-template-columns: 10rem auto;
+  padding: 1rem;
 }
 
 /* Navigation */

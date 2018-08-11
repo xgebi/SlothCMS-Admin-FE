@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="post-type-list" class="post-type-list administration">
     <authorization-checker></authorization-checker>
     <main-sidebar></main-sidebar>
     PostList

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="dashboard" class="dashboard administration">
     <authorization-checker></authorization-checker>
     <main-sidebar></main-sidebar>
     <div>

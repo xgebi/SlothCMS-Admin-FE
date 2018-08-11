@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="post-type-editor" class="post-type-editor administration">
     <authorization-checker></authorization-checker>
     <main-sidebar></main-sidebar>
     <h1>New {{ this.postType.displayName }}</h1>
