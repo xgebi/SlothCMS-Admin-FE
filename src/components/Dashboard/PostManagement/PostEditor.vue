@@ -1,28 +1,30 @@
 <template>
   <div id="post-type-editor" class="post-type-editor administration">
     <authorization-checker></authorization-checker>
-    <main-sidebar></main-sidebar>
-    <h1>New {{ this.postType.displayName }}</h1>
-    <div>
-      <label for="postTypeTitle">Title: </label>
-      <input id="postTypeTitle" name="postTypeTitle" v-model="content.title"/>
-    </div>
-    <div>
-      <label for="postContent">{{ this.postType.displayName }} Content:</label>
-      <textarea id="postContent" name="postContent" v-model="content.content"></textarea>
-    </div>
-    <div>
-      <h2>Custom fields</h2>
-      <div v-for="field in postType.optionalFields">
-        <label>{{ field.displayName }}</label>
-        <input v-if="field.type === 'text'" type="text" :id="field.name" v-model="content.custom[field.name]" />
-        <!--<input v-if="field.type === 'file'" type="file" :id="field.name" v-on:change="content.custom[field.name]" />-->
-        <textarea v-if="field.type === 'textarea'" :id="field.name" v-model="content.custom[field.name]"></textarea>
+    <main-sidebar v-bind:section="type"></main-sidebar>
+    <main>
+      <h1>New {{ this.postType.displayName }}</h1>
+      <div>
+        <label for="postTypeTitle">Title: </label>
+        <input id="postTypeTitle" name="postTypeTitle" v-model="content.title"/>
       </div>
-    </div>
-    <div>
-      <button type="submit" v-on:click="savePost()">{{ saveButton }}</button>
-    </div>
+      <div>
+        <label for="postContent">{{ this.postType.displayName }} Content:</label>
+        <textarea id="postContent" name="postContent" v-model="content.content"></textarea>
+      </div>
+      <div>
+        <h2>Custom fields</h2>
+        <div v-for="field in postType.optionalFields">
+          <label>{{ field.displayName }}</label>
+          <input v-if="field.type === 'text'" type="text" :id="field.name" v-model="content.custom[field.name]" />
+          <!--<input v-if="field.type === 'file'" type="file" :id="field.name" v-on:change="content.custom[field.name]" />-->
+          <textarea v-if="field.type === 'textarea'" :id="field.name" v-model="content.custom[field.name]"></textarea>
+        </div>
+      </div>
+      <div>
+        <button type="submit" v-on:click="savePost()">{{ saveButton }}</button>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -99,6 +101,11 @@ export default {
           }
         });  
       }       
+    },
+    props: {
+      type: {
+        required: true
+      }
     },
     savePost() {
       let status;      

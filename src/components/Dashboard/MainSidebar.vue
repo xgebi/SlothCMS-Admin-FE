@@ -10,8 +10,8 @@
       <!-- Here will be post types -->
       <li v-for="postType in postTypes">
         <router-link :to="{ name: 'PostList', params: { type: postType.name }}">{{ postType.displayName + "s" }}</router-link>
-        <ul>
-          <li><router-link :to="{ name: 'AddPost', params: { type: postType.name }}">{{ "New " + postType.displayName + "s" }}</router-link></li>
+        <ul v-bind:class="{ 'open' : postType.name === section }">
+          <li><router-link :to="{ name: 'AddPost', params: { type: postType.name }}">{{ "New " + postType.displayName }}</router-link></li>
         </ul>
       </li>
       <li><router-link to="/dashboard/settings/">Settings</router-link>
@@ -37,6 +37,9 @@ export default {
     'postTypes',
     'token'
   ]),
+  props: [
+    'section'
+  ],
   methods: {
     logOut() {
       let status;      

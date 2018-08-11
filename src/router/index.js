@@ -14,45 +14,47 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'FirstRunChecker',
+      path: "/",
+      name: "FirstRunChecker",
       component: FirstRunChecker
     },
     {
-      path: '/init-wizard/',
-      name: 'InitWizard',
+      path: "/init-wizard/",
+      name: "InitWizard",
       component: InitWizard,
       props: true
     },
     {
-      path: '/login-screen/',
-      name: 'LoginScreen',
+      path: "/login-screen/",
+      name: "LoginScreen",
       component: LoginScreen
     },
     {
-      path: '/dashboard/',
-      name: 'Dashboard',
+      path: "/dashboard/",
+      name: "Dashboard",
       component: Dashboard
     },
     {
-      path: '/dashboard/settings/',
-      name: 'Settings',
+      path: "/dashboard/settings/",
+      name: "Settings",
       component: Settings
     },
-    { 
-      path: '/dashboard/post/list/:type', 
-      name: 'PostList',
-      component: PostList
+    {
+      path: "/dashboard/post/list/:type",
+      name: "PostList",
+      component: PostList,
+      props: true
     },
-    { 
-      path: '/dashboard/post/:type/edit/:slug', 
-      name: 'EditPost',
-      component: PostEditor
+    {
+      path: "/dashboard/post/:type/edit/:slug",
+      name: "EditPost",
+      component: PostEditor,
+      props: true
     },
-    { 
-      path: '/dashboard/post/:type/new', 
-      name: 'AddPost',
+    {
+      path: "/dashboard/post/:type/new",
+      name: "AddPost",
       component: PostEditor
     }
   ]
-})
+});

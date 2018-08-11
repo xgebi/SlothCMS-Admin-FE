@@ -2,7 +2,9 @@
   <div id="settings" class="settings administration">
     <authorization-checker></authorization-checker>
     <main-sidebar></main-sidebar>
+    <main>
       Settings
+    </main>
   </div>
 </template>
 

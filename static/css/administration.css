@@ -2,7 +2,6 @@
 #app .administration {
   display: grid;
   grid-template-columns: 10rem auto;
-  padding: 1rem;
 }
 
 /* Navigation */
@@ -34,6 +33,8 @@ header#sidebar nav li > ul {
 
 header#sidebar nav li > ul.open {
   display: block;
+  padding-left: 1rem;
+  background: hsla(281.5, 95%, 52.5%, 0.5);
 }
 
 header#sidebar .logout-button {
