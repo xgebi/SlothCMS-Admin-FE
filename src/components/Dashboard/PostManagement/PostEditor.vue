@@ -40,6 +40,9 @@ export default {
     MainSidebar,
     AuthorizationChecker
   },
+  props: [
+    "type"
+  ],
   data() {
     return {
       saveButton: "Publish",
@@ -101,11 +104,6 @@ export default {
           }
         });  
       }       
-    },
-    props: {
-      type: {
-        required: true
-      }
     },
     savePost() {
       let status;      

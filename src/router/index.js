@@ -54,7 +54,8 @@ export default new Router({
     {
       path: "/dashboard/post/:type/new",
       name: "AddPost",
-      component: PostEditor
+      component: PostEditor,
+      props: true
     }
   ]
 });
